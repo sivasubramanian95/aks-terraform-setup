@@ -18,3 +18,7 @@ Istio: an open platform to connect, manage, and secure microservices. Istio prov
 ```bash
 $ make deploy-istio
 ```
+## Challenges and Improvements:
+
+Secret handling is not implemented efficiently and it needs to be improved using vault.
+This needs to be improved for more robust creation and deployment of applications.
