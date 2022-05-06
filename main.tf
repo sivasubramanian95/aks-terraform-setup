@@ -104,7 +104,7 @@ resource "null_resource" "istio" {
     always_run = "${timestamp()}"
   }
   provisioner "local-exec" {
-    command = "istioctl manifest apply -f \".istio/istio-aks.yaml\" --kubeconfig \".kube/${azurerm_kubernetes_cluster.k8s.name}\""
+    command = "istioctl manifest apply -f \".istio/istio-aks.yaml\" --kubeconfig \".kube/${azurerm_kubernetes_cluster.k8s.name}\" --force"
   }
   depends_on = [kubernetes_secret.grafana, kubernetes_secret.kiali, local_file.istio-config]
 }
